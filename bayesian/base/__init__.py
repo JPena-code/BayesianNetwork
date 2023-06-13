@@ -1,1 +1,1 @@
-from DAG import *
+from .DAG import DAG

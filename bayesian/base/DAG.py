@@ -6,12 +6,12 @@ import networkx as nx
 
 class DAG(nx.DiGraph):
 
-    def __init__(self, *args):
-        super().__init__(args)
+    def __init__(self, edges_bunch):
+        super().__init__(edges_bunch)
         cycles = []
         try:
             cycles = nx.find_cycle(self)
-        except np.NetworkXNoCycle:
+        except nx.NetworkXNoCycle:
             pass
         else:
             error_message = 'Cycles are not allowed in Directed Grafical Models.\n'
